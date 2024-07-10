@@ -1,0 +1,74 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-grow: 1;
+    overflow: hidden;
+
+    .category {
+        grid-area: 1 / 1 / 6 / 2;
+        display: flex;
+        background-color: cadetblue;
+        overflow: auto;
+        flex-direction: column;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        gap: 30px;
+
+        .category-text {
+            font-size: 1.8em;
+        }
+        
+        .category-text:hover {
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        grid-area: 1 / 2 / 6 / 6;
+        display: flex;
+        background-color: aquamarine;
+        overflow: auto;
+        gap: 32px;
+        padding-left: 32px;
+        padding-top: 32px;
+        padding-right: 32px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 340px;
+            width: 247px;
+        
+            .card-price {
+                width: 100%;
+                color: red;
+                font-size: 1.8em;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+           
+            .card-text {
+                flex-grow: 1;
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+                box-sizing: border-box;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+        
+        .card:hover {
+            cursor: pointer;
+        }
+    }
+    
+}

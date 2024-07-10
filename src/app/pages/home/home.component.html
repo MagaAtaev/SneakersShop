@@ -1,0 +1,24 @@
+<div class="category">
+  <div (click)="clickOnCategory()" class="category-text">
+    Все
+  </div>
+  @for (brand of storeService.brands(); track $index) {
+    <div (click)="clickOnCategory(brand.name)" class="category-text">
+      {{brand.name}}
+    </div>
+  }
+</div>
+
+<div class="content">
+  @for (product of storeService.products(); track $index) {
+    <mat-card (click)="goToProduct(product.id)" class="card">
+      <img mat-card-image src="https://ir-3.ozone.ru/s3/multimedia-o/wc600/6581653152.jpg" alt="Photo of a Shiba Inu">
+      <div class="card-price">
+        1000₽
+      </div>
+      <div class="card-text">
+        Программирование на C++ в примерах и задачах | Васильев Алексей Николаевич
+      </div>
+    </mat-card>
+  }
+</div>
